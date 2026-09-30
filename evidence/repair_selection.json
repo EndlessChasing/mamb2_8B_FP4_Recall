@@ -1,0 +1,52 @@
+{
+  "format": "FP4_BASE_REPAIR_SELECTION_V1",
+  "complete": true,
+  "protocol_sha256": "bbac4faecdbe775c4409234d4fbb649b2047b935afa9b870eb47c44ffa039655",
+  "training_report_path": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/report.json",
+  "training_report_sha256": "2cc444f6b00e7d86c094a974dfe731c8f75cb1d9d7f423c6081d42cf4c92d204",
+  "successful_updates": 896,
+  "test_used_for_selection": false,
+  "criterion": "minimum_full_validation_pooled_nll",
+  "tie_breaker": "earlier_successful_update",
+  "candidate_pool": [
+    {
+      "successful_updates": 224,
+      "candidate_dir": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0224/model",
+      "candidate_manifest_sha256": "09407b53a566fa94722e5feb7f7e6c37f488a4dc9b98a6766eca9953834e3e9d",
+      "validation_report_path": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0224/validation.json",
+      "validation_report_sha256": "3aee59ecd167fa563cbb142f176c58ed3d675f6d4fe3491e694a93c2ac78ac16",
+      "validation_nll": 510247.758395195,
+      "validation_target_tokens": 264764
+    },
+    {
+      "successful_updates": 448,
+      "candidate_dir": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0448/model",
+      "candidate_manifest_sha256": "2d2208b690c2ec0def90578d8590cc122bb1e4542b0d49ae4417a48f72b0b73c",
+      "validation_report_path": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0448/validation.json",
+      "validation_report_sha256": "06a3fc3dc30390c7b943ad831cbe07f2459bd17243e56e7ca18b5f24bea80575",
+      "validation_nll": 507911.77247810364,
+      "validation_target_tokens": 264764
+    },
+    {
+      "successful_updates": 672,
+      "candidate_dir": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0672/model",
+      "candidate_manifest_sha256": "aa24d8fd587a95a11a009f08db4f566ccadda87cffd1e700b3d179359e24bd92",
+      "validation_report_path": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0672/validation.json",
+      "validation_report_sha256": "228a3c0d0b704ea43062fa6b2ce5415f4aad635a4f76a6f48c0cd7c1d8a185ff",
+      "validation_nll": 509925.5650835037,
+      "validation_target_tokens": 264764
+    },
+    {
+      "successful_updates": 896,
+      "candidate_dir": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0896/model",
+      "candidate_manifest_sha256": "45a06b9476ad344a81853b686e16fa57345692172718cb4fc63205a6ba62b9e9",
+      "validation_report_path": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0896/validation.json",
+      "validation_report_sha256": "9b212afd5ce41d6e85bd16566dd5ec5ffe7a692da5b34cdbaa80c601f4de35b2",
+      "validation_nll": 509724.36366939545,
+      "validation_target_tokens": 264764
+    }
+  ],
+  "chosen_successful_updates": 448,
+  "chosen_candidate_dir": "/home/horde/mamb2_8B_W4A16_Recall_StateQuant/artifacts/fp4_base_repair_v1/formal/step0448/model",
+  "chosen_candidate_manifest_sha256": "2d2208b690c2ec0def90578d8590cc122bb1e4542b0d49ae4417a48f72b0b73c"
+}

@@ -1,0 +1,23 @@
+{
+  "d_model": 4096,
+  "d_intermediate": 0,
+  "n_layer": 56,
+  "vocab_size": 256000,
+  "ssm_cfg": {
+    "layer": "Mamba2",
+    "d_state": 128,
+    "d_conv": 4,
+    "expand": 2,
+    "headdim": 64,
+    "ngroups": 8,
+    "chunk_size": 128,
+    "rmsnorm": true,
+    "norm_before_gate": false,
+    "use_mem_eff_path": false
+  },
+  "rms_norm": true,
+  "residual_in_fp32": false,
+  "fused_add_norm": false,
+  "pad_vocab_size_multiple": 128,
+  "tie_embeddings": false
+}

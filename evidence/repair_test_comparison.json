@@ -1,0 +1,319 @@
+{
+  "format": "FP4_BASE_REPAIR_PPL_EVAL_V1",
+  "complete": true,
+  "mode": "full",
+  "split": "test",
+  "protocol_sha256": "bbac4faecdbe775c4409234d4fbb649b2047b935afa9b870eb47c44ffa039655",
+  "runner_sha256": "559ece712a6f203580398f249a58bff9ce346da0ec7373b3036a0c2451658db3",
+  "code_sha256": {
+    "docs/FP4_BASE_REPAIR_V1_PROTOCOL.md": "bbac4faecdbe775c4409234d4fbb649b2047b935afa9b870eb47c44ffa039655",
+    "mamba2_recall/__init__.py": "79b32606ac476c3248911c55571bf97f96689770067856ce8347837478ef33fd",
+    "mamba2_recall/calibration.py": "54e178521abfe2513fb7bac2aed2ef178fc01b63135222ecc212001ee3ce0a04",
+    "mamba2_recall/evaluation.py": "95cba0b201e37f92e6cbfadb9b3e9d79ba7b0cdc9efda6a58a6216b0d84d35e0",
+    "mamba2_recall/fp4.py": "caaeba63b4ebe8f09c1aba01127e752c4cb9038bd42823c838a320b58956eeee",
+    "mamba2_recall/fp4_checkpoint.py": "eff1a15463d3d24324c9709aa2678195038e0ddbad1e01667eda99bf95f03dbe",
+    "mamba2_recall/fp4_repaired_checkpoint.py": "a4d0fd54901f54612d7699daf5fe72ea27e13f61b643bd1e180213c582b0bb1e",
+    "mamba2_recall/resurface_data.py": "1a547fe3cedca406d6e3db85f65c3ce554558691e3b29b9c92d8fd6bd1c1ba35",
+    "mamba2_recall/resurface_native.py": "2dd08c7ee8958c832f0ae9da7cf5f261dceeff3e528e493c905c7c52df7166d7",
+    "mamba2_recall/runtime.py": "0c84d51c10a08318f6ab7cacf275f739913a6744954de838c8f06c3782e75ad3",
+    "mamba2_recall/state_codec.py": "56bd56d2fcb96382a4c6139824245f7608e903bbf1e3d07c9ea6d61ac8ce371a",
+    "mamba2_recall/state_quant.py": "d57ccba302c81808456ef8ccd9bc36bcb22ee976b2e4cad5efe43f99e4e17efd",
+    "scripts/evaluate_quant_first.py": "4f74c373537785bb877b0d03cbc531a8f1a8480666a74d9bb93966cc226aa7a4",
+    "scripts/evaluate_resurface_more.py": "dd5af73e0c201c931a27e3563977ae1fb1f093eb43440ff2b130ce2db985a732",
+    "scripts/run_fp4_base_repair_ppl_v1.py": "559ece712a6f203580398f249a58bff9ce346da0ec7373b3036a0c2451658db3",
+    "scripts/run_recall_native_prefill_wt2_test_v1.py": "45de81f37c691e585d4769235a79f7a22bdf0b5a0123ab88b769c5b04fd4672e",
+    "scripts/run_statequant.py": "0f56215a494395c6e1ab68c38fd80aee4faf70b8d1b3bfd714d09fd5d7ff6d8d"
+  },
+  "environment": {
+    "python": "3.10.12",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "mamba-ssm": "2.3.2.post1",
+      "numpy": "1.26.4",
+      "triton": "3.6.0",
+      "datasets": "4.8.5",
+      "sentencepiece": "0.2.1"
+    },
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "tf32_matmul": false
+  },
+  "backend_policy": {
+    "format": "MAMBA2_ARCHIVED_RMSNORM_REPLAY_POLICY_V1",
+    "kernel": "mamba_ssm.ops.triton.layer_norm._layer_norm_fwd_1pass_kernel",
+    "original_configs": [
+      {
+        "kwargs": {},
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1,
+        "maxnreg": null,
+        "pre_hook_is_none": true
+      },
+      {
+        "kwargs": {},
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1,
+        "maxnreg": null,
+        "pre_hook_is_none": true
+      },
+      {
+        "kwargs": {},
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1,
+        "maxnreg": null,
+        "pre_hook_is_none": true
+      },
+      {
+        "kwargs": {},
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1,
+        "maxnreg": null,
+        "pre_hook_is_none": true
+      },
+      {
+        "kwargs": {},
+        "num_warps": 16,
+        "num_stages": 3,
+        "num_ctas": 1,
+        "maxnreg": null,
+        "pre_hook_is_none": true
+      },
+      {
+        "kwargs": {},
+        "num_warps": 32,
+        "num_stages": 3,
+        "num_ctas": 1,
+        "maxnreg": null,
+        "pre_hook_is_none": true
+      }
+    ],
+    "selected_config": {
+      "kwargs": {},
+      "num_warps": 16,
+      "num_stages": 3,
+      "num_ctas": 1,
+      "maxnreg": null,
+      "pre_hook_is_none": true
+    },
+    "singleton_config_bypasses_autotuning": true,
+    "applied_before_first_model_load": true,
+    "candidate_used_for_selection": false,
+    "selection_basis": "Only warp16 exactly matches both archived S16 and parent first-window NLL; full archived parent replay remains mandatory",
+    "external_source_sha256": {
+      "mamba_ssm.ops.triton.layer_norm": "0cecae69ed780c07454fe067f9738608a53ebb17ae6046988d13bbbd84ca128b",
+      "mamba_ssm.utils.determinism": "cb6e1c30392c11200425c2a23ad9fa3d47f50b556d15e9b0caf79b7d483d6f1d",
+      "triton.runtime.autotuner": "40f5e142806219942585a16742e9f3721d5bfef88145b571cf389f9aec6460bb"
+    },
+    "package_versions": {
+      "torch": "2.11.0+cu128",
+      "mamba-ssm": "2.3.2.post1",
+      "triton": "3.6.0"
+    },
+    "cudnn_version": 91900,
+    "precision_flags": {
+      "tf32_matmul": false,
+      "tf32_cudnn": false,
+      "fp16_reduced_precision_reduction": true,
+      "bf16_reduced_precision_reduction": true,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "deterministic_algorithms": false,
+      "float32_matmul_precision": "highest"
+    },
+    "determinism_environment": {
+      "MAMBA_DETERMINISTIC": null,
+      "TRITON_CACHE_AUTOTUNING": null,
+      "TRITON_AUTOTUNE_BLOCK_SIZE_M": null,
+      "TRITON_AUTOTUNE_BLOCK_SIZE_N": null,
+      "TRITON_AUTOTUNE_BLOCK_SIZE_K": null,
+      "TRITON_AUTOTUNE_BLOCK_SIZE_DSTATE": null
+    },
+    "clarification_sha256": "a677dcf896c37474d422ee54abc8f9bea6052e5c76d5835e9cc2b94f304f2f45"
+  },
+  "candidate_manifest_sha256": "2d2208b690c2ec0def90578d8590cc122bb1e4542b0d49ae4417a48f72b0b73c",
+  "parent_manifest_sha256": "4e7fb60f5d03c61e63324a6c25847014a26f9aa0c8d5a8c922d0f367e514fe07",
+  "conversion_receipt_sha256": "55de4189a7e04c9564a48b0fbb5f37428d3d1bb5b6274831d878b41ef4686c9b",
+  "candidate_successful_updates": 448,
+  "candidate_training_report_sha256": "d5fb50f2e045b6202a5f38b353ceab7ae47b21c7cc88e8cb398b46c342632c6e",
+  "selection_receipt_sha256": "2f1ff559f3e907b3803bcc6d7036d39dab88c11dbb5e69f1de57e2dff5ca452c",
+  "test_used_for_training_or_selection": false,
+  "project_splits_previously_exposed": true,
+  "adapter_loaded": false,
+  "statequant_controller_installed": false,
+  "reports": {
+    "baseline": {
+      "file": "baseline.json",
+      "sha256": "790950cb4e65c48f26b66e10e66c1dc1ce57a38d50a0c1ece417647de92fe1da",
+      "ppl": 7.52059126696671,
+      "nll": 607236.4201438427,
+      "target_tokens": 300963
+    },
+    "repaired": {
+      "file": "repaired.json",
+      "sha256": "e454b7d48a6543ff0b21feaec62e6c4439b9dbdfa6002bf11cc9f751c11a419d",
+      "ppl": 6.717854132348465,
+      "nll": 573264.9257321358,
+      "target_tokens": 300963
+    },
+    "source_fp16": {
+      "file": "source_fp16.json",
+      "sha256": "1cb9885c3c85937954d822f286338c326c0ce5232645af5b78a08504b6e3b66d",
+      "ppl": 7.244528283258169,
+      "nll": 595980.9166567326,
+      "target_tokens": 300963
+    }
+  },
+  "publication_performed": false,
+  "quality_scope": "PPL only, no recall measured. Validation-only selection precedes final test; no untouched project holdout claim.",
+  "dataset": {
+    "dataset": "Salesforce/wikitext",
+    "configuration": "wikitext-2-raw-v1",
+    "split": "test",
+    "revision_argument": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "dataset_fingerprint": "a46124b21ac53738",
+    "document_join": "two newline characters",
+    "text_sha256": "696cca6b65a171b0a358a4be6732cdfdf2dd6164a32e20fd70e3c13fc4dfae83",
+    "token_stream_sha256_int64le": "5b82bd46e833e77fcfc0af62bafeaac62e70e68cfdf214d375f0b7b132d4b608",
+    "total_tokens": 300964,
+    "tokenizer_sha256": "5862e2f71caf762bc9845662be5fec2867deb58d874568235a02a36c5111cd09",
+    "automatic_special_tokens": false
+  },
+  "tokens_file": {
+    "file": "tokens.int64le",
+    "bytes": 2407712,
+    "sha256": "5b82bd46e833e77fcfc0af62bafeaac62e70e68cfdf214d375f0b7b132d4b608"
+  },
+  "windowing": {
+    "execution": "prefill",
+    "state_reset_each_window": true,
+    "state_requantized_each_token": false,
+    "persistent_ppl_cache_bytes": null,
+    "window_count": 147,
+    "target_tokens": 300963,
+    "final_partial_included": true,
+    "targets_per_full_window": 2048,
+    "logits_chunk_tokens": 64
+  },
+  "candidate_metadata": {
+    "directory": "candidate_metadata",
+    "files": {
+      "SHA256SUMS": {
+        "bytes": 12612,
+        "sha256": "36d2963aacfd7f692e68cd9a89d2b773dd37c94cdebd2a49108726cfb4c51af4"
+      },
+      "conversion_receipt.json": {
+        "bytes": 295055,
+        "sha256": "55de4189a7e04c9564a48b0fbb5f37428d3d1bb5b6274831d878b41ef4686c9b"
+      },
+      "parent_weight_manifest.json": {
+        "bytes": 145923,
+        "sha256": "4e7fb60f5d03c61e63324a6c25847014a26f9aa0c8d5a8c922d0f367e514fe07"
+      },
+      "training_report.json": {
+        "bytes": 790051,
+        "sha256": "d5fb50f2e045b6202a5f38b353ceab7ae47b21c7cc88e8cb398b46c342632c6e"
+      },
+      "weight_manifest.json": {
+        "bytes": 202391,
+        "sha256": "2d2208b690c2ec0def90578d8590cc122bb1e4542b0d49ae4417a48f72b0b73c"
+      }
+    },
+    "scope": "Copied small sealed metadata; copied SHA256SUMS declares large shard identities but large files were not copied."
+  },
+  "selection": {
+    "receipt_file": "selection_receipt.json",
+    "receipt_sha256": "2f1ff559f3e907b3803bcc6d7036d39dab88c11dbb5e69f1de57e2dff5ca452c",
+    "training_report_file": "selection_training_report.json",
+    "training_report_sha256": "2cc444f6b00e7d86c094a974dfe731c8f75cb1d9d7f423c6081d42cf4c92d204",
+    "chosen_successful_updates": 448,
+    "candidate_evidence_files": {
+      "selection_evidence/step0224/validation_report.json": {
+        "sha256": "3aee59ecd167fa563cbb142f176c58ed3d675f6d4fe3491e694a93c2ac78ac16",
+        "bytes": 39416
+      },
+      "selection_evidence/step0224/weight_manifest.json": {
+        "sha256": "09407b53a566fa94722e5feb7f7e6c37f488a4dc9b98a6766eca9953834e3e9d",
+        "bytes": 202391
+      },
+      "selection_evidence/step0448/validation_report.json": {
+        "sha256": "06a3fc3dc30390c7b943ad831cbe07f2459bd17243e56e7ca18b5f24bea80575",
+        "bytes": 39414
+      },
+      "selection_evidence/step0448/weight_manifest.json": {
+        "sha256": "2d2208b690c2ec0def90578d8590cc122bb1e4542b0d49ae4417a48f72b0b73c",
+        "bytes": 202391
+      },
+      "selection_evidence/step0672/validation_report.json": {
+        "sha256": "228a3c0d0b704ea43062fa6b2ce5415f4aad635a4f76a6f48c0cd7c1d8a185ff",
+        "bytes": 39404
+      },
+      "selection_evidence/step0672/weight_manifest.json": {
+        "sha256": "aa24d8fd587a95a11a009f08db4f566ccadda87cffd1e700b3d179359e24bd92",
+        "bytes": 202391
+      },
+      "selection_evidence/step0896/validation_report.json": {
+        "sha256": "9b212afd5ce41d6e85bd16566dd5ec5ffe7a692da5b34cdbaa80c601f4de35b2",
+        "bytes": 39403
+      },
+      "selection_evidence/step0896/weight_manifest.json": {
+        "sha256": "45a06b9476ad344a81853b686e16fa57345692172718cb4fc63205a6ba62b9e9",
+        "bytes": 202391
+      }
+    },
+    "candidate_fixed_before_test": true,
+    "validation_only": true
+  },
+  "comparison": {
+    "baseline_ppl": 7.52059126696671,
+    "repaired_ppl": 6.717854132348465,
+    "ppl_delta": -0.802737134618245,
+    "ppl_relative_change": -0.10673856697201067,
+    "windows_with_lower_repaired_nll": 147,
+    "source_fp16_ppl": 7.244528283258169,
+    "absolute_test_ppl_target": 7.2,
+    "repaired_full_test_ppl_strictly_below_7_2": true
+  },
+  "integrity_checks": {
+    "all507_weight_contents_exact_before_after": true,
+    "original114_fp4_matrices_unchanged": true,
+    "same119_weight_shard_geometry_bytes": true,
+    "retained393_fp16_payload_bytes_unchanged": true,
+    "same_full_paired_population": true,
+    "native_methods_and_parameters_unchanged": true,
+    "no_resurface_or_statequant_installed": true
+  },
+  "integrity_pass": true,
+  "backend_policy_final_check": {
+    "singleton_config_unchanged": true,
+    "selected_config": {
+      "kwargs": {},
+      "num_warps": 16,
+      "num_stages": 3,
+      "num_ctas": 1,
+      "maxnreg": null,
+      "pre_hook_is_none": true
+    },
+    "best_config": {
+      "kwargs": {},
+      "num_warps": 16,
+      "num_stages": 3,
+      "num_ctas": 1,
+      "maxnreg": null,
+      "pre_hook_is_none": true
+    }
+  },
+  "memory": {
+    "logical_weight_payload_bytes": 4638460360,
+    "actual_weight_shard_bytes": 4638539864,
+    "expanded_fp16_weight_bytes": 16473999360,
+    "retained_fp16_payload_bytes": 7161856,
+    "persistent_ppl_cache_bytes": null,
+    "adapter_payload_bytes": 0,
+    "promoted_weights": 0
+  },
+  "elapsed_seconds": 364.83611392974854
+}
