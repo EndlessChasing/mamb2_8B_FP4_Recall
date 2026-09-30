@@ -499,6 +499,17 @@
   "repository": "EndlessChasing/mamb2_8B_FP4_Recall",
   "scope": "Allowlisted source bytes and public asset provenance from the audited complete bundle; no research Git history, raw logs, optimizer/checkpoint archives, tokenized corpus, adapter/tokenizer binaries or weight shards included in source commit. PUBLICATION_PROVENANCE.json cannot include its own SHA256; all other source files are bound here and every file is bound by the outside preparation receipt.",
   "source_checkpoint_sha256": "47c2766f6aad89d73beafbeaecb334aab902d7370906d081764a90bb7a8bbbcb",
+  "source_documentation_patch": {
+    "changed_paths": [
+      "LICENSES.md",
+      "THIRD_PARTY_NOTICES.md",
+      "docs/THIRD_PARTY_NOTICES.md"
+    ],
+    "original_tagged_source_commit": "b84fc72c091c455ce4fc5a8c759ae9af437e1dfe",
+    "release_tag_unchanged": true,
+    "scope": "Added the exact LICENSES.md already present in the fully verified runtime bundle and corrected current source-notice links. No model, measured code, protocol or evidence changed.",
+    "sealed_model_bundle_unchanged": true
+  },
   "source_files": {
     ".gitignore": {
       "bytes": 107,
@@ -508,13 +519,17 @@
       "bytes": 35149,
       "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
     },
+    "LICENSES.md": {
+      "bytes": 1755,
+      "sha256": "52b561ab78c4d54060af92ce625633cebc3db20df7d8f9f1e99c42070e9f177d"
+    },
     "README.md": {
       "bytes": 8437,
       "sha256": "2e1f1cc8f92953f9feb3b3eb1a8449f4a4f23887d62fe0b223cd731fd5b5dda8"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "bytes": 7191,
-      "sha256": "0864a68a66178baa58aaf1d4f9916a1fe72bd0d8880c15b69595d6685c8f9e65"
+      "bytes": 7159,
+      "sha256": "7a563e46e5ca1003de9dd6500681d233d00d9231cfe628713edd8f6d3b6ae71b"
     },
     "docs/FP4_BASE_REPAIR_V1_PROTOCOL.md": {
       "bytes": 7084,
@@ -541,8 +556,8 @@
       "sha256": "a677dcf896c37474d422ee54abc8f9bea6052e5c76d5835e9cc2b94f304f2f45"
     },
     "docs/THIRD_PARTY_NOTICES.md": {
-      "bytes": 7191,
-      "sha256": "0864a68a66178baa58aaf1d4f9916a1fe72bd0d8880c15b69595d6685c8f9e65"
+      "bytes": 7159,
+      "sha256": "7a563e46e5ca1003de9dd6500681d233d00d9231cfe628713edd8f6d3b6ae71b"
     },
     "docs/prose_train_manifest.json": {
       "bytes": 126611,

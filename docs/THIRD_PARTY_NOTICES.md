@@ -8,7 +8,7 @@ into `mamba2-8b-fp4g16-repaired-s16-resurface-v1/`.
 
 The modified base weight files, including the repaired retained FP16 shard,
 are Apache-2.0. EndlessChasing's modification grant is described in
-[LICENSES.md](https://github.com/EndlessChasing/mamb2_8B_FP4_Recall/blob/v0.1.0-fp4g16-repaired-s16-resurface/LICENSES.md); complete text is [licenses/Apache-2.0.txt](https://github.com/EndlessChasing/mamb2_8B_FP4_Recall/blob/v0.1.0-fp4g16-repaired-s16-resurface/licenses/Apache-2.0.txt)
+[LICENSES.md](https://github.com/EndlessChasing/mamb2_8B_FP4_Recall/blob/main/LICENSES.md); complete text is [licenses/Apache-2.0.txt](https://github.com/EndlessChasing/mamb2_8B_FP4_Recall/blob/v0.1.0-fp4g16-repaired-s16-resurface/licenses/Apache-2.0.txt)
 and the canonical [reference/w4/WEIGHTS_LICENSE.txt](https://github.com/EndlessChasing/mamb2_8B_FP4_Recall/blob/v0.1.0-fp4g16-repaired-s16-resurface/reference/w4/WEIGHTS_LICENSE.txt).
 The inherited Recall/project implementation and this new Resurface adapter
 are GPL-3.0, with complete text in [LICENSE](https://github.com/EndlessChasing/mamb2_8B_FP4_Recall/blob/v0.1.0-fp4g16-repaired-s16-resurface/LICENSE) and
